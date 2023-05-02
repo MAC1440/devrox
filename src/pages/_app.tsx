@@ -1,12 +1,5 @@
-// i18n
-// import "../locales/i18n";
-import { appWithTranslation } from "next-i18next";
-
 // Cookies
 import cookie from "cookie";
-
-// highlight
-import "../utils/highlight";
 
 // editor
 import "react-quill/dist/quill.snow.css";
@@ -88,4 +81,4 @@ MyApp.getInitialProps = async (context: any) => {
   };
 };
 
-export default appWithTranslation(MyApp);
+export default MyApp;

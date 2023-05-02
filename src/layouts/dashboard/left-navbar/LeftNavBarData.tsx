@@ -4,7 +4,7 @@ import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import PersonSearchOutlinedIcon from "@mui/icons-material/PersonSearchOutlined";
 import AccountBoxOutlinedIcon from "@mui/icons-material/AccountBoxOutlined";
 
-export const NAV_LINKS = [
+export const NAV_LINKS:any = [
   {
     text: "Dashboard",
     img: <GridViewOutlinedIcon />,

@@ -7,7 +7,6 @@ import Layout from "@/layouts";
 // components
 import Page from "@/components/Page";
 import Spline from "@splinetool/react-spline";
-import { TitleWithBreadcrumbs } from "@/components/PageBreadcrumbs";
 
 // ----------------------------------------------------------------------
 
@@ -31,8 +30,6 @@ export default function Dashboard() {
   return (
     <Page title="Home Page">
       <RootStyle>
-        {/* <TitleWithBreadcrumbs activeLast title="Home Page" /> */}
-
         <ContentStyle>
           <div
             style={{

@@ -42,7 +42,7 @@ const LeftNavbarList = (props: any) => {
         },
       }}
     >
-      {NAV_LINKS.map((text, index) => {
+      {NAV_LINKS.map((text: any, index: any) => {
         return (
           <div key={index}>
             {Array.isArray(text.sublist) ? (
@@ -76,7 +76,7 @@ const LeftNavbarList = (props: any) => {
                     sx={{ color: theme.palette.grey[400] }}
                   >
                     <List component="div" disablePadding>
-                      {text.sublist?.map((item, index) => (
+                      {text.sublist?.map((item: any, index: any) => (
                         <div key={index}>
                           <Link
                             style={{
