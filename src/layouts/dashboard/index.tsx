@@ -9,6 +9,7 @@ import Footer from "./footer/Footer";
 
 export default function DashboardLayout({ children }: any) {
   const theme = useTheme();
+
   const [open, setOpen] = useState(true);
   const handleDrawer = () => (open ? setOpen(false) : setOpen(true));
 
