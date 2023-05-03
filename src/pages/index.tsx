@@ -56,23 +56,7 @@ export default function HomePage() {
   return (
     <Page title="Home Page">
       <RootStyle>
-        {/* <HomeHero /> */}
-        <ContentStyle>
-          {/* <HomeHugePackElements />
-
-          <HomeDarkMode />
-
-          <HomeColorPresets />
-
-          <HomeCleanInterfaces />
-
-          <HomePricingPlans />
-
-          <HomeLookingFor />
-
-          <HomeAdvertisement />  */}
-          {/* {t("demo.title", { ns: "footer" })} */}
-        </ContentStyle>
+        <ContentStyle></ContentStyle>
       </RootStyle>
     </Page>
   );

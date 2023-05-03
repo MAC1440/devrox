@@ -7,6 +7,8 @@ import Layout from "@/layouts";
 // components
 import Page from "@/components/Page";
 import Spline from "@splinetool/react-spline";
+import logo from "../../assets/img/logo_bg.png";
+import Image from "next/image";
 
 // ----------------------------------------------------------------------
 
@@ -33,13 +35,22 @@ export default function Dashboard() {
         <ContentStyle>
           <div
             style={{
-              border: "1px solid tomato",
-              height: "500px",
-              width: "75%",
+              borderRadius: "20px",
+              height: "400px",
+              width: "700px",
               margin: "auto",
+              overflow: "hidden",
             }}
           >
-            <Spline scene="https://prod.spline.design/qaIECqWBuV4q-TGA/scene.splinecode" />
+            <Image
+              src={logo}
+              width={130}
+              height={100}
+              alt="logo"
+              style={{ width: "100%", height: "100%" }}
+            />
+
+            {/* <Spline scene="https://prod.spline.design/qaIECqWBuV4q-TGA/scene.splinecode" /> */}
           </div>
         </ContentStyle>
       </RootStyle>

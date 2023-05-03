@@ -4,7 +4,10 @@ import { useTheme } from "@emotion/react";
 import LeftNavbarList from "./LeftNavbarList";
 import { styled, Theme, CSSObject } from "@mui/material/styles";
 import MuiDrawer from "@mui/material/Drawer";
-export const drawerWidth = 300;
+import Image from "next/image";
+import logo from "../../../assets/img/logo.png";
+
+export const drawerWidth = 250;
 
 const LeftNavbar = (props: any) => {
   const theme: any = useTheme();
@@ -14,12 +17,8 @@ const LeftNavbar = (props: any) => {
     <Drawer variant="permanent" open={open}>
       <Box sx={{ minHeight: "100vh" }}>
         <DrawerHeader>
-          {open && (
-            <Typography color={theme.palette.primary.main}>
-              Expanded Logo
-            </Typography>
-          )}
-          {!open && <p>Logo</p>}
+          {open && <Image src={logo} width={130} height={100} alt="logo" />}
+          {!open && <Image src={logo} width={50} height={40} alt="logo" />}
         </DrawerHeader>
         {open && <Box sx={{ textAlign: "center", mt: 1.5 }}></Box>}
         <LeftNavbarList open={open} />

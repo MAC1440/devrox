@@ -9,13 +9,11 @@ import {
   styled,
   useTheme,
 } from "@mui/material";
-import dayjs from "dayjs";
-import React from "react";
+import React, { useState } from "react";
 import { FormProvider, RHFTextField } from "@/components/hook-form";
 import * as Yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import RHFDatePicker from "@/components/hook-form/RHFDatePicker";
 import { sendContactForm } from "@/lib/api";
 
 const ContentStyle = styled("div")(({ theme }) => ({
@@ -23,6 +21,7 @@ const ContentStyle = styled("div")(({ theme }) => ({
   backgroundColor: theme.palette.background.default,
 }));
 export default function ContactUs() {
+  const [message, setMessage] = useState("Submit");
   const theme = useTheme();
   const defaultValues = {
     email: "",
@@ -42,11 +41,14 @@ export default function ContactUs() {
   const { handleSubmit } = methods;
 
   const onSubmit = async (data: any) => {
+    setMessage("Loading...");
     console.log(data, "submitted data");
     try {
       await sendContactForm(data);
+      setMessage("Message Sent");
     } catch (error) {
       console.log(error, "ganda sa error");
+      setMessage("Try Again");
     }
   };
 
@@ -89,7 +91,7 @@ export default function ContactUs() {
 
                 <Grid item xs={12} textAlign={"center"}>
                   <Button size="large" type="submit" variant="contained">
-                    Submit
+                    {message}
                   </Button>
                 </Grid>
               </Grid>
