@@ -7,16 +7,11 @@ export const colorPresets = [
   // DEFAULT
   {
     name: "default",
-    ...palette.light.primary,
-  },
-  // PURPLE
-  {
-    name: "purple",
-    lighter: "#9a61e7",
-    light: "#8e4ee4",
-    main: "#813AE1",
-    dark: "#7434cb",
-    darker: "#672eb4",
+    lighter: "#f88",
+    light: "#f44",
+    main: "#ff0000",
+    dark: "#b00",
+    darker: "#700",
     contrastText: "#fff",
   },
 
@@ -30,16 +25,7 @@ export const colorPresets = [
     darker: "#03A9F3",
     contrastText: "#fff",
   },
-  // ORANGE
-  {
-    name: "orange",
-    lighter: "#f06533",
-    light: "#f27447",
-    main: "#F06533",
-    dark: "#f06533",
-    darker: "#d85b2e",
-    contrastText: "#fff",
-  },
+
   // Turquoise
   {
     name: "turquoise",
@@ -73,19 +59,15 @@ export const colorPresets = [
 ];
 
 export const defaultPreset = colorPresets[0];
-export const purplePreset = colorPresets[1];
-export const bluePreset = colorPresets[2];
-export const orangePreset = colorPresets[3];
-export const turquoisePreset = colorPresets[4];
-export const charcoalPreset = colorPresets[5];
-export const greenPreset = colorPresets[6];
+export const bluePreset = colorPresets[1];
+export const turquoisePreset = colorPresets[2];
+export const charcoalPreset = colorPresets[3];
+export const greenPreset = colorPresets[4];
 
 export default function getColorPresets(presetsKey: string) {
   return {
-    purple: purplePreset,
     blue: bluePreset,
     green: greenPreset,
-    orange: orangePreset,
     turquoise: turquoisePreset,
     charcoal: charcoalPreset,
     default: defaultPreset,

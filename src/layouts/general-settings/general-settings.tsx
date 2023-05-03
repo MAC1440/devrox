@@ -73,10 +73,8 @@ const Generalsettings = (props: any) => {
   const theme: any = useTheme();
   const {
     themeMode,
-    themeDirection,
     themeColorPresets,
     onResetSetting,
-    onChangeDirection,
     onChangeMode,
     colorOption,
     onChangeColor,
@@ -128,7 +126,7 @@ const Generalsettings = (props: any) => {
               </Box>
 
               {/* color all  */}
-              <Box>
+              <Box textAlign={"center"} mt={4}>
                 <Typography
                   variant="body1"
                   color="initial"
@@ -138,7 +136,7 @@ const Generalsettings = (props: any) => {
                     fontSize: "13px",
                   }}
                 >
-                  PRIMARY COLOR
+                  COLOR THEME
                 </Typography>
               </Box>
               <RadioGroup
@@ -146,13 +144,11 @@ const Generalsettings = (props: any) => {
                 value={themeColorPresets}
                 onChange={onChangeColor}
               >
-                <Grid container gap={1.5} mt={2}>
+                <Grid container gap={1.5} mt={2} justifyContent={"center"}>
                   {colorOption.map((color: { name: string; value: string }) => {
                     const colorName: any = color.name;
                     const colorValue = color.value;
                     const isSelected = themeColorPresets === colorName;
-                    console.log(colorName);
-
                     return (
                       // eslint-disable-next-line react/jsx-key
                       <Grid item>
@@ -162,7 +158,7 @@ const Generalsettings = (props: any) => {
                             backgroundColor: isSelected
                               ? colorValue
                               : btnBgColor,
-                            borderRadius: 100,
+                            borderRadius: 2,
                             outline: 1,
                             outlineStyle: "solid",
                             outlineColor: isSelected
@@ -171,7 +167,7 @@ const Generalsettings = (props: any) => {
                             minWidth: 100,
                             display: "flex",
                             justifyContent: "center",
-                            padding: theme.spacing(1),
+                            padding: theme.spacing(0.7),
                             textTransform: "capitalize",
                           }}
                           label={
@@ -215,7 +211,7 @@ const Generalsettings = (props: any) => {
               </RadioGroup>
               {/* color all  */}
               {/* mode all  */}
-              <Box sx={{ mt: 3 }}>
+              <Box sx={{ mt: 4 }} textAlign={"center"}>
                 <Typography
                   variant="body1"
                   color="initial"
@@ -225,19 +221,24 @@ const Generalsettings = (props: any) => {
                     fontSize: "13px",
                   }}
                 >
-                  COLOR SCHEME
+                  COLOR MODE
                 </Typography>
               </Box>
               <RadioGroup
                 name="themeMode"
                 value={themeMode}
                 onChange={onChangeMode}
-                sx={{}}
               >
                 <Box
-                  sx={{ display: "flex", flexWrap: "wrap", gap: "15px", mt: 1 }}
+                  sx={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: "15px",
+                    mt: 2,
+                    justifyContent: "center",
+                  }}
                 >
-                  {["light", "dark"].map((mode: any) => {
+                  {["dark", "light"].map((mode: any) => {
                     const isSelected = themeMode === mode;
                     return (
                       // eslint-disable-next-line react/jsx-key
@@ -246,12 +247,12 @@ const Generalsettings = (props: any) => {
                           sx={{
                             position: "relative",
                             background: btnBgColor,
-                            borderRadius: 100,
-                            Height: 30,
-                            minWidth: 100,
+                            borderRadius: 2,
+                            Height: 20,
+                            minWidth: 80,
                             display: "flex",
                             justifyContent: "center",
-                            padding: theme.spacing(1),
+                            padding: theme.spacing(0.7),
                             outline: 1,
                             outlineStyle: "solid",
                             outlineColor: isSelected
@@ -267,11 +268,11 @@ const Generalsettings = (props: any) => {
                               variant="body1"
                               color="initial"
                               sx={{
-                                fontWeight: "700",
+                                fontWeight: "600",
                                 color: isSelected
                                   ? theme.palette.primary.main
                                   : textColor,
-                                fontSize: "12px",
+                                fontSize: "10px",
                                 display: "flex",
                                 alignItems: "center",
                                 gap: "10px",
