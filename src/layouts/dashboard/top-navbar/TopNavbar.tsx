@@ -5,26 +5,27 @@ import {
   IconButton,
   useTheme,
 } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
 import React from "react";
 import { createGradient } from "@/theme/palette";
 import SettingsIcon from "@mui/icons-material/Settings";
 import Generalsettings from "../../general-settings/general-settings";
+import LeftNavbarList from "../navbar/navbarList";
+import Image from "next/image";
+import logo from "../../../assets/img/logo_bg.png";
 
-const Topnavbar = (props: any) => {
-  const { handleDrawer } = props;
+const Topnavbar = () => {
   const theme: any = useTheme();
   const [open, setopen] = React.useState<boolean>();
   const openHander = () => (open === true ? setopen(false) : setopen(true));
   return (
     <ClickAwayListener onClickAway={() => setopen(false)}>
       <Box sx={{ width: "100%" }}>
-        <Grid container>
+        <Grid container alignItems={"center"}>
           <Grid xs={12} item>
             <Box
               sx={{
-                px: 1.4,
-                py: 1,
+                px: 2,
+                // py: 1,
                 boxShadow: "0px 1px 16px rgba(0, 0, 0, 0.24)",
                 display: "flex",
                 alignItems: "center",
@@ -36,14 +37,23 @@ const Topnavbar = (props: any) => {
                 ),
               }}
             >
-              <IconButton
+              {/* <IconButton
                 color="inherit"
                 aria-label="open drawer"
                 onClick={handleDrawer}
                 edge="start"
               >
                 <MenuIcon sx={{ color: "white", fontSize: "24px" }} />
-              </IconButton>
+              </IconButton> */}
+              <Image
+                src={logo}
+                width={90}
+                height={60}
+                alt="logo"
+                style={{ borderRadius: "10px" }}
+              />
+              <LeftNavbarList />
+
               <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
                 <IconButton
                   onClick={openHander}

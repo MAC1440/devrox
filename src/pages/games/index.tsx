@@ -33,7 +33,7 @@ export default function Products() {
                 {product.name}
               </Grid>
               <Grid
-                onClick={() => router.push(`/products/${product.path}`)}
+                onClick={() => router.push(`/games/${product.path}`)}
                 width={480}
                 height={270}
                 container

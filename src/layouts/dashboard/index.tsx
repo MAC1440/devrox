@@ -1,17 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 // @mui
 import { Box, useTheme } from "@mui/material";
 // components
-import LeftNavbar from "./left-navbar/LeftNavbar";
 import Topnavbar from "./top-navbar/TopNavbar";
 import Footer from "./footer/Footer";
 // ----------------------------------------------------------------------
 
 export default function DashboardLayout({ children }: any) {
   const theme = useTheme();
-
-  const [open, setOpen] = useState(true);
-  const handleDrawer = () => (open ? setOpen(false) : setOpen(true));
 
   return (
     <Box sx={{ width: "100%" }}>
@@ -23,10 +19,8 @@ export default function DashboardLayout({ children }: any) {
           background: "white",
         }}
       >
-        <LeftNavbar open={open} />
-
         <Box sx={{ width: "100%" }}>
-          <Topnavbar handleDrawer={handleDrawer} />
+          <Topnavbar />
           <Box sx={styles.childrenStyles(theme)}>{children}</Box>
         </Box>
       </Box>
