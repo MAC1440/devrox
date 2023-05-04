@@ -7,7 +7,7 @@ import { styled } from "@mui/material/styles";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { Grid } from "@mui/material";
-import { productsData } from "./products-data";
+import { productsData } from "../../data/products-data";
 import { useTheme } from "@emotion/react";
 import spotlight from "../../assets/img/spotlight.jpg";
 Products.getLayout = function getLayout(page: any) {

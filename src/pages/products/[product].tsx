@@ -1,7 +1,7 @@
 import Layout from "@/layouts";
 import { useRouter } from "next/router";
 import React from "react";
-import { productsData } from "./products-data";
+import { productsData } from "../../data/products-data";
 
 export default function SingleProduct() {
   const router = useRouter();
