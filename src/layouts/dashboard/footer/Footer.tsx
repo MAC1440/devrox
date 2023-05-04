@@ -124,7 +124,7 @@ const ContactIcons = () => {
           window.open("http://www.linkedin.com", "_blank");
         }}
       >
-        <LinkedInIcon sx={{ color: "" }} />
+        <LinkedInIcon sx={{ color: "black" }} />
       </Fab>
     </>
   );
