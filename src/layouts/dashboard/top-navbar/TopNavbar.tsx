@@ -9,7 +9,7 @@ import React from "react";
 import { createGradient } from "@/theme/palette";
 import SettingsIcon from "@mui/icons-material/Settings";
 import Generalsettings from "../../general-settings/general-settings";
-import LeftNavbarList from "../navbar/navbarList";
+import NavbarList from "../navbar/navbarList";
 import Image from "next/image";
 import logo from "../../../assets/img/logo_bg.png";
 
@@ -25,7 +25,6 @@ const Topnavbar = () => {
             <Box
               sx={{
                 px: 2,
-                // py: 1,
                 boxShadow: "0px 1px 16px rgba(0, 0, 0, 0.24)",
                 display: "flex",
                 alignItems: "center",
@@ -52,7 +51,7 @@ const Topnavbar = () => {
                 alt="logo"
                 style={{ borderRadius: "10px" }}
               />
-              <LeftNavbarList />
+              <NavbarList />
 
               <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
                 <IconButton

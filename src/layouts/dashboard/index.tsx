@@ -1,9 +1,20 @@
 import { useState } from "react";
 // @mui
-import { Box, useTheme } from "@mui/material";
+import { Box, Grid, useTheme } from "@mui/material";
 // components
 import Topnavbar from "./top-navbar/TopNavbar";
 import Footer from "./footer/Footer";
+import image from "../../assets/img/logo.png";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import background from "../../assets/parallax/background.png";
+import jungle1 from "../../assets/parallax/jungle1.png";
+import jungle2 from "../../assets/parallax/jungle2.png";
+import jungle3 from "../../assets/parallax/jungle3.png";
+import jungle4 from "../../assets/parallax/jungle4.png";
+import jungle5 from "../../assets/parallax/jungle5.png";
+import logoLand from "../../assets/parallax/logo_land.png";
+import man from "../../assets/parallax/man_on_mountain.png";
+import mountains from "../../assets/parallax/mountains.png";
 // ----------------------------------------------------------------------
 
 export default function DashboardLayout({ children }: any) {
@@ -20,7 +31,11 @@ export default function DashboardLayout({ children }: any) {
         }}
       >
         <Box sx={{ width: "100%" }}>
-          <Topnavbar />
+          <Grid sx={{ display: { xs: "none", md: "block" } }}>
+            <Topnavbar />
+          </Grid>
+          <Grid sx={{ display: { md: "none", xs: "block" } }}>abcdefg</Grid>
+
           <Box sx={styles.childrenStyles(theme)}>{children}</Box>
         </Box>
       </Box>
@@ -38,6 +53,13 @@ const styles = {
   childrenStyles: (theme: any) => ({
     minHeight: "100vh",
     backgroundColor: theme.palette.background.default,
+    padding: "0px !important",
+    // backgroundColor: "#D56C1B",
+
+    // backgroundImage: `url(${image.src})`,
+    // backgroundSize: "50%",
+    // backgroundRepeat: "no-repeat",
+    // backgroundPosition: "center",
     [theme.breakpoints.up("xs")]: {
       width: "100%",
       px: theme.spacing(2),

@@ -7,11 +7,11 @@ export const colorPresets = [
   // DEFAULT
   {
     name: "default",
-    lighter: "#f88",
-    light: "#f44",
-    main: "#ff0000",
-    dark: "#b00",
-    darker: "#700",
+    lighter: "#6d97a7",
+    light: "#326172",
+    main: "#18404F",
+    dark: "#13333f",
+    darker: "#0C2028",
     contrastText: "#fff",
   },
 

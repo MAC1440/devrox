@@ -5,25 +5,7 @@ import Layout from "../layouts";
 // components
 import Page from "@/components/Page";
 import "../styles/Home.module.css";
-// sections
-// import {
-//   HomeHero,
-//   HomeDarkMode,
-//   HomeLookingFor,
-//   HomeColorPresets,
-//   HomePricingPlans,
-//   HomeAdvertisement,
-//   HomeCleanInterfaces,
-//   HomeHugePackElements,
-// } from '../sections/home';
-
-// next-i18
-// import { useTranslation } from "next-i18next";
-// import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useRouter } from "next/router";
-import { useState } from "react";
-import LoadingScreen from "@/components/LoadingScreen";
-
+import Dashboard from "./home";
 // ----------------------------------------------------------------------
 
 const RootStyle = styled("div")(() => ({
@@ -45,25 +27,14 @@ HomePage.getLayout = function getLayout(page: any) {
 // ----------------------------------------------------------------------
 
 export default function HomePage() {
-  const router = useRouter();
-  const [isLoading, setIsLoading] = useState(true);
-  // const { t } = useTranslation(["common", "footer"]);
-
-  // router.push("/auth/login");
-
-  // if (isLoading) return <LoadingScreen />;
-
   return (
     <Page title="Home Page">
       <RootStyle>
-        <ContentStyle></ContentStyle>
+        <ContentStyle>
+          {" "}
+          <Dashboard />
+        </ContentStyle>
       </RootStyle>
     </Page>
   );
 }
-
-// export const getStaticProps = async ({ locale }: { locale: string }) => ({
-//   props: {
-//     ...(await serverSideTranslations(locale ?? "en", ["common", "footer"])),
-//   },
-// });

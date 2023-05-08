@@ -19,6 +19,8 @@
     "@mui/x-data-grid": "^6.0.4",
     "@mui/x-date-pickers": "^6.0.3",
     "@react-icons/all-files": "^4.1.0",
+    "@react-spring/parallax": "^9.7.2",
+    "@react-spring/web": "^9.7.2",
     "@reduxjs/toolkit": "^1.9.3",
     "@splinetool/react-spline": "^2.2.6",
     "@splinetool/runtime": "^0.9.294",
@@ -44,6 +46,7 @@
     "react-otp-input": "^3.0.0",
     "react-quill": "^2.0.0",
     "react-redux": "^8.0.5",
+    "react-spring": "^9.6.1",
     "scss": "^0.2.4",
     "typescript": "5.0.2",
     "yup": "^1.0.2"
@@ -57,5 +60,8 @@
     "@types/nprogress": "^0.2.0",
     "@types/numeral": "^2.0.2",
     "@types/react-lazy-load-image-component": "^1.5.2"
+  },
+  "peerDependencies": {
+    "react-spring": "^9.6.1"
   }
 }

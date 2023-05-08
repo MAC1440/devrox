@@ -53,52 +53,52 @@ export default function ContactUs() {
   };
 
   return (
-    <Layout>
-      <ContentStyle>
-        <Page title="Contact Us">
-          <Card sx={{ p: 2 }}>
-            <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
-              <Grid container pt={2} spacing={3} justifyContent={"center"}>
-                <Grid item md={12}>
-                  <Typography
-                    variant="h6"
-                    color={theme.palette.primary.main}
-                    textAlign={"center"}
-                  >
-                    Contact Us:{" "}
-                  </Typography>
-                </Grid>
-
-                <Grid item xs={12} md={8}>
-                  <RHFTextField
-                    size="small"
-                    fullWidth={true}
-                    name="email"
-                    label="Email"
-                    placeholder="john@dev-rox.com"
-                  />
-                </Grid>
-                <Grid item xs={12} md={8}>
-                  <RHFTextField
-                    size="small"
-                    fullWidth={true}
-                    name="enquiryMessage"
-                    multiline
-                    minRows={3}
-                    label="Enquiry Message"
-                  />
-                </Grid>
-
-                <Grid item xs={12} textAlign={"center"}>
-                  <Button size="large" type="submit" variant="contained">
-                    {message}
-                  </Button>
-                </Grid>
+    // <Layout>
+    <ContentStyle>
+      <Page title="Contact Us">
+        <Card sx={{ p: 2 }}>
+          <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
+            <Grid container pt={2} spacing={3} justifyContent={"center"}>
+              <Grid item md={12}>
+                <Typography
+                  variant="h6"
+                  color={theme.palette.primary.main}
+                  textAlign={"center"}
+                >
+                  Contact Us:{" "}
+                </Typography>
               </Grid>
-            </FormProvider>
-          </Card>
-        </Page>
-      </ContentStyle>
-    </Layout>
+
+              <Grid item xs={12} md={8}>
+                <RHFTextField
+                  size="small"
+                  fullWidth={true}
+                  name="email"
+                  label="Email"
+                  placeholder="john@dev-rox.com"
+                />
+              </Grid>
+              <Grid item xs={12} md={8}>
+                <RHFTextField
+                  size="small"
+                  fullWidth={true}
+                  name="enquiryMessage"
+                  multiline
+                  minRows={3}
+                  label="Enquiry Message"
+                />
+              </Grid>
+
+              <Grid item xs={12} textAlign={"center"}>
+                <Button size="large" type="submit" variant="contained">
+                  {message}
+                </Button>
+              </Grid>
+            </Grid>
+          </FormProvider>
+        </Card>
+      </Page>
+    </ContentStyle>
+    // </Layout>
   );
 }
