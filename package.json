@@ -47,7 +47,6 @@
     "react-quill": "^2.0.0",
     "react-redux": "^8.0.5",
     "react-spring": "^9.6.1",
-    "react-swipeable-views": "^0.14.0",
     "scss": "^0.2.4",
     "typescript": "5.0.2",
     "yup": "^1.0.2"
@@ -60,8 +59,7 @@
     "@types/nodemailer": "^6.4.7",
     "@types/nprogress": "^0.2.0",
     "@types/numeral": "^2.0.2",
-    "@types/react-lazy-load-image-component": "^1.5.2",
-    "@types/react-swipeable-views": "^0.13.1"
+    "@types/react-lazy-load-image-component": "^1.5.2"
   },
   "peerDependencies": {
     "react-spring": "^9.6.1"

@@ -7,7 +7,6 @@ import { useTheme } from "@emotion/react";
 import MobileStepper from "@mui/material/MobileStepper";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
-import SwipeableViews from "react-swipeable-views";
 
 function Games() {
   const theme: any = useTheme();
@@ -51,12 +50,11 @@ function Games() {
         >
           <Typography textAlign="center">{images[activeStep].label}</Typography>
         </Paper>
-        {/* <AutoPlaySwipeableViews */}
-        <SwipeableViews
-          axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-          index={activeStep}
-          onChangeIndex={handleStepChange}
-          enableMouseEvents
+        <Box
+        // axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+        // index={activeStep}
+        // onChangeIndex={handleStepChange}
+        // enableMouseEvents
         >
           {images.map((step, index) => (
             <div key={step.label}>
@@ -76,7 +74,7 @@ function Games() {
               ) : null}
             </div>
           ))}
-        </SwipeableViews>
+        </Box>
         <MobileStepper
           steps={maxSteps}
           position="static"
