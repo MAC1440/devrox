@@ -11,17 +11,20 @@ export const NAV_LINKS: any = [
   {
     text: "Home",
     img: <HomeOutlinedIcon />,
-    link: "/home",
+    // link: "/home",
+    link: "#home",
   },
   {
     text: "Games",
     img: <SportsEsportsIcon />,
-    link: "/games",
+    // link: "/games",
+    link: "#games",
   },
   {
     text: "Services",
     img: <PsychologyIcon />,
-    link: "/services",
+    // link: "/services",
+    link: "#services",
   },
   {
     text: "Careers",
@@ -31,6 +34,6 @@ export const NAV_LINKS: any = [
   {
     text: "Contact Us",
     img: <ContactMailIcon />,
-    link: "contact-us",
+    link: "#contact-us",
   },
 ];

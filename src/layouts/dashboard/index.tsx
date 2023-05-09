@@ -4,7 +4,7 @@ import { Box, Grid, useTheme } from "@mui/material";
 // components
 import Topnavbar from "./top-navbar/TopNavbar";
 import Footer from "./footer/Footer";
-import image from "../../assets/img/logo.png";
+import image from "../../assets/bg.png";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import background from "../../assets/parallax/background.png";
 import jungle1 from "../../assets/parallax/jungle1.png";
@@ -54,12 +54,10 @@ const styles = {
     minHeight: "100vh",
     backgroundColor: theme.palette.background.default,
     padding: "0px !important",
-    // backgroundColor: "#D56C1B",
-
-    // backgroundImage: `url(${image.src})`,
-    // backgroundSize: "50%",
-    // backgroundRepeat: "no-repeat",
-    // backgroundPosition: "center",
+    backgroundImage: `url(${image.src})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
     [theme.breakpoints.up("xs")]: {
       width: "100%",
       px: theme.spacing(2),

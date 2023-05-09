@@ -18,7 +18,7 @@ import { sendContactForm } from "@/lib/api";
 
 const ContentStyle = styled("div")(({ theme }) => ({
   position: "relative",
-  backgroundColor: theme.palette.background.default,
+  // backgroundColor: theme.palette.background.default,
 }));
 export default function ContactUs() {
   const [message, setMessage] = useState("Submit");
@@ -55,14 +55,15 @@ export default function ContactUs() {
   return (
     // <Layout>
     <ContentStyle>
-      <Page title="Contact Us">
-        <Card sx={{ p: 2 }}>
+      <>
+        <Card sx={{ p: 2, minHeight: "100vh", backgroundColor: "transparent" }}>
           <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
             <Grid container pt={2} spacing={3} justifyContent={"center"}>
               <Grid item md={12}>
                 <Typography
-                  variant="h6"
-                  color={theme.palette.primary.main}
+                  variant="h3"
+                  fontWeight={900}
+                  color={theme.palette.primary.dark}
                   textAlign={"center"}
                 >
                   Contact Us:{" "}
@@ -71,6 +72,7 @@ export default function ContactUs() {
 
               <Grid item xs={12} md={8}>
                 <RHFTextField
+                  sx={{ color: "red" }}
                   size="small"
                   fullWidth={true}
                   name="email"
@@ -97,7 +99,7 @@ export default function ContactUs() {
             </Grid>
           </FormProvider>
         </Card>
-      </Page>
+      </>
     </ContentStyle>
     // </Layout>
   );

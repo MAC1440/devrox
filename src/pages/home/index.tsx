@@ -75,13 +75,19 @@ export default function Dashboard() {
             <Grid sx={styles.tertiaryBg}></Grid>
           </ParallaxLayer>
           <ParallaxLayer offset={1} speed={0.25}>
-            <Games />
+            <Grid id="games">
+              <Games />
+            </Grid>
           </ParallaxLayer>
           <ParallaxLayer offset={2} speed={0.25}>
-            <Services />
+            <Grid id="services">
+              <Services />
+            </Grid>
           </ParallaxLayer>
           <ParallaxLayer offset={3} speed={0.25}>
-            <ContactUs />
+            <Grid id="contact-us">
+              <ContactUs />
+            </Grid>
           </ParallaxLayer>
         </Parallax>
       </RootStyle>

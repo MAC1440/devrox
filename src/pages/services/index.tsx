@@ -6,7 +6,7 @@ import React from "react";
 
 const ContentStyle = styled("div")(({ theme }) => ({
   position: "relative",
-  backgroundColor: theme.palette.background.default,
+  // backgroundColor: theme.palette.background.default,
 }));
 export default function Services() {
   const theme: any = useTheme();
@@ -14,18 +14,18 @@ export default function Services() {
     // <Layout>
     <ContentStyle>
       <Grid container>
-        {servicesData.map((service: any) => (
+        {servicesData.map((service: any, index: number) => (
           <Grid
             key={service.id}
-            md={4}
-            flexDirection={"column"}
+            md={12}
+            flexDirection={index % 2 ? "row" : "row-reverse"}
             display={"flex"}
             alignItems={"center"}
-            justifyContent={"center"}
+            justifyContent={"space-evenly"}
           >
             <p
               style={{
-                color: theme.palette.primary.main,
+                color: theme.palette.primary.constrastText,
                 fontSize: "25px",
                 fontWeight: "600",
               }}

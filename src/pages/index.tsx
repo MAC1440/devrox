@@ -10,12 +10,14 @@ import Dashboard from "./home";
 
 const RootStyle = styled("div")(() => ({
   height: "100%",
+  scrollBehavior: "smooth",
 }));
 
 const ContentStyle = styled("div")(({ theme }) => ({
   // overflow: "hidden",
   position: "relative",
   backgroundColor: theme.palette.background.default,
+  scrollBehavior: "smooth",
 }));
 
 // ----------------------------------------------------------------------
@@ -31,7 +33,6 @@ export default function HomePage() {
     <Page title="Home Page">
       <RootStyle>
         <ContentStyle>
-          {" "}
           <Dashboard />
         </ContentStyle>
       </RootStyle>
