@@ -14,7 +14,7 @@ import store from "@/redux/store";
 
 // mui
 import { LocalizationProvider } from "@mui/x-date-pickers";
-import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+// import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 
 // utils
 import { getSettings } from "@/utils/settings";
@@ -44,20 +44,20 @@ function MyApp(props: any) {
 
       <ReduxProvider store={store}>
         <>
-          <LocalizationProvider dateAdapter={AdapterDateFns}>
-            <CollapseDrawerProvider>
-              <SettingsProvider defaultSettings={settings}>
-                <ThemeProvider>
-                  <NotistackProvider>
-                    <ThemeColorPresets>
-                      <ProgressBar />
-                      {getLayout(<Component {...pageProps} />)}
-                    </ThemeColorPresets>
-                  </NotistackProvider>
-                </ThemeProvider>
-              </SettingsProvider>
-            </CollapseDrawerProvider>
-          </LocalizationProvider>
+          {/* <LocalizationProvider dateAdapter={AdapterDateFns}> */}
+          <CollapseDrawerProvider>
+            <SettingsProvider defaultSettings={settings}>
+              <ThemeProvider>
+                <NotistackProvider>
+                  <ThemeColorPresets>
+                    <ProgressBar />
+                    {getLayout(<Component {...pageProps} />)}
+                  </ThemeColorPresets>
+                </NotistackProvider>
+              </ThemeProvider>
+            </SettingsProvider>
+          </CollapseDrawerProvider>
+          {/* </LocalizationProvider> */}
         </>
       </ReduxProvider>
     </>
