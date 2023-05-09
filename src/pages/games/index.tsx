@@ -1,26 +1,20 @@
 import * as React from "react";
+import { styled } from "@mui/material/styles";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import Layout from "@/layouts";
 import Page from "@/components/Page";
-import { styled } from "@mui/material/styles";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { Grid } from "@mui/material";
+import { Grid, Box, Paper, Button, Typography } from "@mui/material";
 import { images, productsData } from "../../data/products-data";
 import { useTheme } from "@emotion/react";
-import spotlight from "../../assets/img/spotlight.jpg";
 
 //--------------------------------------------------------------
-import Box from "@mui/material/Box";
 import MobileStepper from "@mui/material/MobileStepper";
-import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views";
-import { autoPlay } from "react-swipeable-views-utils";
 
 // Games.getLayout = function getLayout(page: any) {
 //   return <Layout>{page}</Layout>;
@@ -86,7 +80,7 @@ const RootStyle = styled("div")(() => ({
 
 // ----------------------------------------------------------------------
 
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+// const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 function Games() {
   const theme: any = useTheme();
@@ -130,7 +124,8 @@ function Games() {
         >
           <Typography textAlign="center">{images[activeStep].label}</Typography>
         </Paper>
-        <AutoPlaySwipeableViews
+        {/* <AutoPlaySwipeableViews */}
+        <SwipeableViews
           axis={theme.direction === "rtl" ? "x-reverse" : "x"}
           index={activeStep}
           onChangeIndex={handleStepChange}
@@ -154,7 +149,7 @@ function Games() {
               ) : null}
             </div>
           ))}
-        </AutoPlaySwipeableViews>
+        </SwipeableViews>
         <MobileStepper
           steps={maxSteps}
           position="static"
