@@ -1,13 +1,6 @@
 import * as React from "react";
-import { styled } from "@mui/material/styles";
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
-import Layout from "@/layouts";
-import Page from "@/components/Page";
-import Image from "next/image";
-import { useRouter } from "next/router";
-import { Grid, Box, Paper, Button, Typography } from "@mui/material";
-import { images, productsData } from "../../data/products-data";
+import { Box, Paper, Button, Typography } from "@mui/material";
+import { images } from "../../data/products-data";
 import { useTheme } from "@emotion/react";
 
 //--------------------------------------------------------------
