@@ -60,7 +60,8 @@
     "@types/nodemailer": "^6.4.7",
     "@types/nprogress": "^0.2.0",
     "@types/numeral": "^2.0.2",
-    "@types/react-lazy-load-image-component": "^1.5.2"
+    "@types/react-lazy-load-image-component": "^1.5.2",
+    "@types/react-swipeable-views": "^0.13.1"
   },
   "peerDependencies": {
     "react-spring": "^9.6.1"
