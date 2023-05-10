@@ -32,6 +32,7 @@ export const productsData = [
 export const images = [
   {
     label: "Aero Car Stunt",
+    path: "car-stunt",
     imgPath: stuntMain.src,
     images: [stuntMain, stunt1, stunt2, stunt3],
     appStoreLink:
@@ -41,6 +42,7 @@ export const images = [
   },
   {
     label: "Roblast",
+    path: "roblast",
     imgPath: roblastMain.src,
     images: [roblastMain, roblast1, roblast2],
     appStoreLink: "",

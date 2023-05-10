@@ -6,19 +6,10 @@ import { Grid, useTheme } from "@mui/material";
 import Layout from "@/layouts";
 // components
 import Page from "@/components/Page";
-import Spline from "@splinetool/react-spline";
-import logo from "../../assets/img/logo_bg.png";
-import image from "next/image";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import background from "../../assets/parallax/background.png";
-import jungle1 from "../../assets/parallax/jungle1.png";
-import jungle2 from "../../assets/parallax/jungle2.png";
-import jungle3 from "../../assets/parallax/jungle3.png";
-import jungle4 from "../../assets/parallax/jungle4.png";
-import jungle5 from "../../assets/parallax/jungle5.png";
-import logoLand from "../../assets/parallax/logo_land.png";
-import man from "../../assets/parallax/man_on_mountain.png";
-import mountains from "../../assets/parallax/mountains.png";
+// import background from "../../assets/parallax/background.png";
+import foreground from "../../assets/parallax/foreground.png";
+import boulder from "../../assets/parallax/boulder.png";
 import Games from "../games";
 import Services from "../services";
 import ContactUs from "../contact-us";
@@ -47,37 +38,18 @@ export default function Dashboard() {
     <Page title="Home Page">
       <RootStyle>
         <Parallax pages={4} style={{ height: "100vh", padding: "none" }}>
-          <ParallaxLayer offset={0} speed={0.25}>
-            <Grid sx={styles.mainBg}></Grid>
+          <ParallaxLayer offset={0} speed={0.1} factor={2}></ParallaxLayer>
+          <ParallaxLayer offset={0} speed={0.7}>
+            <Grid sx={styles.foreground} id="home"></Grid>
           </ParallaxLayer>
-          <ParallaxLayer offset={0} speed={0.27}>
-            <Grid sx={styles.secondaryBg}></Grid>
+          <ParallaxLayer offset={0} speed={1.2}>
+            <Grid sx={styles.boulder}></Grid>
           </ParallaxLayer>
-          <ParallaxLayer offset={0} speed={-0.1}>
-            <Grid sx={styles.bgColor(theme)}></Grid>
-          </ParallaxLayer>
-          <ParallaxLayer offset={0} speed={0.3}>
-            <Grid sx={styles.jungle1}></Grid>
-          </ParallaxLayer>
-          <ParallaxLayer offset={0} speed={0.35}>
-            <Grid sx={styles.jungle2}></Grid>
-          </ParallaxLayer>
-          <ParallaxLayer offset={0} speed={0.5}>
-            <Grid sx={styles.jungle3}></Grid>
-          </ParallaxLayer>
-          <ParallaxLayer offset={0} speed={0.45}>
-            <Grid sx={styles.jungle4}></Grid>
-          </ParallaxLayer>
-          <ParallaxLayer offset={0} speed={0.4}>
-            <Grid sx={styles.jungle5}></Grid>
-          </ParallaxLayer>
-          <ParallaxLayer offset={0} speed={0.35}>
-            <Grid sx={styles.tertiaryBg}></Grid>
-          </ParallaxLayer>
+
           <ParallaxLayer offset={1} speed={0.25}>
             <Grid id="games">
               <Games />
-            </Grid>
+            </Grid>{" "}
           </ParallaxLayer>
           <ParallaxLayer offset={2} speed={0.25}>
             <Grid id="services">
@@ -98,61 +70,25 @@ const styles: any = {
   bgColor: (theme: any) => ({
     backgroundColor: theme.palette.background.default,
   }),
-  mainBg: {
-    backgroundImage: `url(${background.src})`,
+  // backgroundMain: {
+  //   backgroundImage: `url(${background.src})`,
+  //   backgroundSize: "auto 950px",
+  //   backgroundRepeat: "repeat-x",
+  //   width: "100%",
+  //   height: "100vh",
+  // },
+  foreground: {
+    backgroundImage: `url(${foreground.src})`,
     backgroundSize: "auto 950px",
     backgroundRepeat: "repeat-x",
     width: "100%",
     height: "1000px",
   },
-  jungle1: {
-    backgroundImage: `url(${jungle1.src})`,
+  boulder: {
+    backgroundImage: `url(${boulder.src})`,
     backgroundSize: "auto 950px",
     backgroundRepeat: "repeat-x",
     width: "100%",
     height: "1000px",
-  },
-  jungle2: {
-    backgroundImage: `url(${jungle2.src})`,
-    backgroundSize: "auto 950px",
-    backgroundRepeat: "repeat-x",
-    width: "100%",
-    height: "1000px",
-  },
-  jungle3: {
-    backgroundImage: `url(${jungle3.src})`,
-    backgroundSize: "auto 950px",
-    backgroundRepeat: "repeat-x",
-    width: "100%",
-    height: "1000px",
-  },
-  jungle4: {
-    backgroundImage: `url(${jungle4.src})`,
-    backgroundSize: "auto 950px",
-    backgroundRepeat: "repeat-x",
-    width: "100%",
-    height: "1000px",
-  },
-  jungle5: {
-    backgroundImage: `url(${jungle5.src})`,
-    backgroundSize: "auto 950px",
-    backgroundRepeat: "repeat-x",
-    width: "100%",
-    height: "1000px",
-  },
-  secondaryBg: {
-    backgroundImage: `url(${logoLand.src})`,
-    backgroundSize: "auto 950px",
-    // backgroundRepeat: "repeat-x",
-    width: "100%",
-    height: "1000px",
-  },
-  tertiaryBg: {
-    backgroundImage: `url(${man.src})`,
-    backgroundSize: "auto 950px",
-    backgroundRepeat: "repeat-x",
-    width: "100%",
-    height: "1000px",
-    backgroundPosition: "bottom center",
   },
 };

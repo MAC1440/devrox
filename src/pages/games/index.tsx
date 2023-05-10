@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Box, Paper, Button, Typography } from "@mui/material";
+import { Box, Paper, Button, Typography, Grid } from "@mui/material";
 import { images } from "../../data/products-data";
 import { useTheme } from "@emotion/react";
 
@@ -7,8 +7,10 @@ import { useTheme } from "@emotion/react";
 import MobileStepper from "@mui/material/MobileStepper";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
+import { useRouter } from "next/router";
 
 function Games() {
+  const router = useRouter();
   const theme: any = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
   const maxSteps = images.length;
@@ -26,91 +28,91 @@ function Games() {
   };
 
   return (
-    <>
-      <h1 style={{ textAlign: "center" }}>Game-Rox</h1>
-      <Box
-        className="subBox"
-        sx={{
-          maxWidth: 900,
-          flexGrow: 1,
-          margin: "auto",
-        }}
-      >
-        <Paper
-          square
-          elevation={0}
+    <Grid
+      container
+      alignItems={"center"}
+      justifyContent={"space-around"}
+      minHeight="80vh"
+    >
+      <Grid>
+        <h1 style={{ textAlign: "center" }}>Games To Look for</h1>
+      </Grid>
+      <Grid>
+        <Box
+          className="subBox"
           sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            height: 50,
-            pl: 2,
-            bgcolor: "background.dark",
+            maxWidth: 900,
+            flexGrow: 1,
+            margin: "auto",
           }}
         >
-          <Typography textAlign="center">{images[activeStep].label}</Typography>
-        </Paper>
-        <Box
-        // axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-        // index={activeStep}
-        // onChangeIndex={handleStepChange}
-        // enableMouseEvents
-        >
-          {images.map((step, index) => (
-            <div key={step.label}>
-              {Math.abs(activeStep - index) <= 2 ? (
-                <Box
-                  component="img"
-                  sx={{
-                    height: 500,
-                    display: "block",
-                    maxWidth: 900,
-                    overflow: "hidden",
-                    width: "100%",
-                  }}
-                  src={step.imgPath}
-                  alt={step.label}
-                />
-              ) : null}
-            </div>
-          ))}
+          <Paper
+            square
+            elevation={0}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              height: 50,
+              pl: 2,
+              bgcolor: "background.dark",
+            }}
+          >
+            <Typography textAlign="center">
+              {images[activeStep].label}
+            </Typography>
+          </Paper>
+
+          <Box
+            component="img"
+            sx={{
+              cursor: "pointer",
+              height: 500,
+              display: "block",
+              maxWidth: 900,
+              margin: "auto",
+              overflow: "hidden",
+              width: "100%",
+              boxSizing: "border-box",
+              "&:hover": {
+                width: "99%",
+                height: "99%",
+                border: "2px solid gray",
+              },
+            }}
+            src={images[activeStep].imgPath}
+            alt={images[activeStep].label}
+            onClick={() => router.push(`/games/${images[activeStep].path}`)}
+          />
+          <MobileStepper
+            steps={maxSteps}
+            position="static"
+            activeStep={activeStep}
+            sx={{ background: theme.palette.background.dark }}
+            nextButton={
+              <Button
+                size="small"
+                onClick={handleNext}
+                disabled={activeStep === maxSteps - 1}
+              >
+                Next
+                <KeyboardArrowRight />
+              </Button>
+            }
+            backButton={
+              <Button
+                size="small"
+                onClick={handleBack}
+                disabled={activeStep === 0}
+              >
+                <KeyboardArrowLeft />
+                Back
+              </Button>
+            }
+          />
         </Box>
-        <MobileStepper
-          steps={maxSteps}
-          position="static"
-          activeStep={activeStep}
-          sx={{ background: theme.palette.background.dark }}
-          nextButton={
-            <Button
-              size="small"
-              onClick={handleNext}
-              disabled={activeStep === maxSteps - 1}
-            >
-              Next
-              {theme.direction === "rtl" ? (
-                <KeyboardArrowLeft />
-              ) : (
-                <KeyboardArrowRight />
-              )}
-            </Button>
-          }
-          backButton={
-            <Button
-              size="small"
-              onClick={handleBack}
-              disabled={activeStep === 0}
-            >
-              {theme.direction === "rtl" ? (
-                <KeyboardArrowRight />
-              ) : (
-                <KeyboardArrowLeft />
-              )}
-              Back
-            </Button>
-          }
-        />
-      </Box>
-    </>
+      </Grid>
+    </Grid>
   );
 }
 

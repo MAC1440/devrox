@@ -19,7 +19,7 @@ const Topnavbar = () => {
   const openHander = () => (open === true ? setopen(false) : setopen(true));
   return (
     <ClickAwayListener onClickAway={() => setopen(false)}>
-      <Box sx={{ width: "100%" }}>
+      <Box sx={{ width: "100%", position: "fixed", top: 0, zIndex: 200 }}>
         <Grid container alignItems={"center"}>
           <Grid xs={12} item>
             <Box

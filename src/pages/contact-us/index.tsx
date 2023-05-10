@@ -1,10 +1,7 @@
-import Page from "@/components/Page";
-import Layout from "@/layouts";
 import {
   Button,
   Card,
   Grid,
-  TextField,
   Typography,
   styled,
   useTheme,
@@ -15,10 +12,12 @@ import * as Yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { sendContactForm } from "@/lib/api";
+import contact from "../../assets/contact.jpg";
+import contactus from "../../assets/img/contactus.png";
 
 const ContentStyle = styled("div")(({ theme }) => ({
-  position: "relative",
-  // backgroundColor: theme.palette.background.default,
+  padding: "3rem",
+  backgroundColor: theme.palette.background.default,
 }));
 export default function ContactUs() {
   const [message, setMessage] = useState("Submit");
@@ -55,21 +54,65 @@ export default function ContactUs() {
   return (
     // <Layout>
     <ContentStyle>
-      <>
-        <Card sx={{ p: 2, minHeight: "100vh", backgroundColor: "transparent" }}>
-          <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
-            <Grid container pt={2} spacing={3} justifyContent={"center"}>
-              <Grid item md={12}>
-                <Typography
-                  variant="h3"
-                  fontWeight={900}
-                  color={theme.palette.primary.dark}
-                  textAlign={"center"}
-                >
-                  Contact Us:{" "}
-                </Typography>
-              </Grid>
+      <Card
+        sx={{
+          p: 2,
+          minHeight: "80vh",
+          minWidth: "80vw",
+          backgroundImage: `url(${contact.src})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
+          <Grid
+            container
+            height={"80vh"}
+            alignItems="center"
+            justifyContent="center"
+            p={2}
+          >
+            <Grid
+              xs={0}
+              md={6}
+              height="100%"
+              sx={{
+                backgroundImage: `url(${contactus.src})`,
+                backgroundSize: "contain",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+                transform: "rotate(-45deg)",
+              }}
+            >
+              a
+              {/* <Typography
+                variant="h2"
+                color={theme.palette.primary.contrastText}
+                textAlign={"center"}
+              >
+                Contact Us:
+              </Typography> */}
+            </Grid>
 
+            <Grid
+              item
+              container
+              md={6}
+              xs={12}
+              p={4}
+              spacing={3}
+              justifyContent={"center"}
+              alignItems={"center"}
+              borderRadius={4}
+              boxShadow={4}
+              sx={{
+                backgroundColor: theme.palette.background.default,
+                // filter: " blur(5px)",
+              }}
+            >
               <Grid item xs={12} md={8}>
                 <RHFTextField
                   sx={{ color: "red" }}
@@ -97,9 +140,9 @@ export default function ContactUs() {
                 </Button>
               </Grid>
             </Grid>
-          </FormProvider>
-        </Card>
-      </>
+          </Grid>
+        </FormProvider>
+      </Card>
     </ContentStyle>
     // </Layout>
   );

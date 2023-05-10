@@ -26,11 +26,11 @@ export const NAV_LINKS: any = [
     // link: "/services",
     link: "#services",
   },
-  {
-    text: "Careers",
-    img: <WorkIcon />,
-    link: "/careers",
-  },
+  // {
+  //   text: "Careers",
+  //   img: <WorkIcon />,
+  //   link: "/careers",
+  // },
   {
     text: "Contact Us",
     img: <ContactMailIcon />,
