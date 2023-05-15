@@ -16,8 +16,8 @@ import contact from "../../assets/contact.jpg";
 import contactus from "../../assets/img/contactus.png";
 
 const ContentStyle = styled("div")(({ theme }) => ({
-  padding: "3rem",
-  backgroundColor: theme.palette.background.default,
+  // padding: "3rem",
+  // backgroundColor: theme.palette.background.default,
 }));
 export default function ContactUs() {
   const [message, setMessage] = useState("Submit");
@@ -54,12 +54,12 @@ export default function ContactUs() {
   return (
     // <Layout>
     <ContentStyle>
-      <Card
+      <Grid
         sx={{
           p: 2,
-          minHeight: "80vh",
-          minWidth: "80vw",
-          backgroundImage: `url(${contact.src})`,
+          minHeight: "100vh",
+          minWidth: "100vw",
+          // backgroundImage: `url(${contact.src})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
@@ -78,7 +78,8 @@ export default function ContactUs() {
             <Grid
               xs={0}
               md={6}
-              height="100%"
+              minHeight={300}
+              height="60%"
               sx={{
                 backgroundImage: `url(${contactus.src})`,
                 backgroundSize: "contain",
@@ -86,16 +87,7 @@ export default function ContactUs() {
                 backgroundPosition: "center",
                 transform: "rotate(-45deg)",
               }}
-            >
-              a
-              {/* <Typography
-                variant="h2"
-                color={theme.palette.primary.contrastText}
-                textAlign={"center"}
-              >
-                Contact Us:
-              </Typography> */}
-            </Grid>
+            />
 
             <Grid
               item
@@ -142,7 +134,7 @@ export default function ContactUs() {
             </Grid>
           </Grid>
         </FormProvider>
-      </Card>
+      </Grid>
     </ContentStyle>
     // </Layout>
   );

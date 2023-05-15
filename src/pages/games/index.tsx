@@ -35,7 +35,9 @@ function Games() {
       minHeight="80vh"
     >
       <Grid>
-        <h1 style={{ textAlign: "center" }}>Games To Look for</h1>
+        <h1 style={{ textAlign: "center", transform: "rotate(-45deg)" }}>
+          Games To Look for
+        </h1>
       </Grid>
       <Grid>
         <Box
@@ -74,11 +76,11 @@ function Games() {
               overflow: "hidden",
               width: "100%",
               boxSizing: "border-box",
-              "&:hover": {
-                width: "99%",
-                height: "99%",
-                border: "2px solid gray",
-              },
+              // "&:hover": {
+              //   width: "99%",
+              //   height: "99%",
+              //   border: "2px solid gray",
+              // },
             }}
             src={images[activeStep].imgPath}
             alt={images[activeStep].label}
