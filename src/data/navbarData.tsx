@@ -17,19 +17,16 @@ export const NAV_LINKS: any = [
   {
     text: "Games",
     img: <SportsEsportsIcon />,
-    // link: "/games",
     link: "#games",
   },
-  {
-    text: "Services",
-    img: <PsychologyIcon />,
-    // link: "/services",
-    link: "#services",
-  },
+  // {
+  //   text: "Services",
+  //   img: <PsychologyIcon />,
+  //   link: "#services",
+  // },
   // {
   //   text: "Careers",
   //   img: <WorkIcon />,
-  //   link: "/careers",
   // },
   {
     text: "Contact Us",

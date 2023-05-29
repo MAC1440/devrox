@@ -30,12 +30,22 @@ function Games() {
   return (
     <Grid
       container
-      alignItems={"center"}
       justifyContent={"space-around"}
       minHeight="80vh"
+      sx={{
+        flexDirection: { xs: "column", md: "row" },
+        gap: { xs: "10em", md: "0em" },
+        alignItems: { md: "center", xs: "space-between" },
+      }}
     >
       <Grid>
-        <h1 style={{ textAlign: "center", transform: "rotate(-45deg)" }}>
+        <h1
+          style={{
+            textAlign: "center",
+            transform: "rotate(-45deg)",
+            color: theme.palette.primary.main,
+          }}
+        >
           Games To Look for
         </h1>
       </Grid>

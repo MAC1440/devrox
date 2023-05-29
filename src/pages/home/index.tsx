@@ -37,10 +37,27 @@ export default function Dashboard() {
   return (
     <Page title="Home Page">
       <RootStyle>
-        <Parallax pages={4} style={{ height: "100vh", padding: "none" }}>
+        <Parallax pages={3} style={{ height: "100vh", padding: "none" }}>
           <ParallaxLayer offset={0} speed={0.1} factor={2}></ParallaxLayer>
           <ParallaxLayer offset={0} speed={0.7}>
-            <Grid sx={styles.foreground} id="home"></Grid>
+            <Grid sx={styles.foreground} id="home">
+              <Grid sx={styles.content} textAlign={"center"}>
+                <h1
+                  style={{
+                    color: "brown",
+                    textShadow:
+                      "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black",
+                  }}
+                >
+                  Welcome to Gamers Spa
+                </h1>
+                <h3>Every Game Matters</h3>
+                <p>
+                  Take your shot, take a leap and dive right into casual realm
+                  and relax. Game ON.
+                </p>
+              </Grid>
+            </Grid>
           </ParallaxLayer>
           <ParallaxLayer offset={0} speed={1.2}>
             <Grid sx={styles.boulder}></Grid>
@@ -51,12 +68,14 @@ export default function Dashboard() {
               <Games />
             </Grid>{" "}
           </ParallaxLayer>
+          {/*
           <ParallaxLayer offset={2} speed={0.25}>
-            <Grid id="services">
+             <Grid id="services">
               <Services />
-            </Grid>
+            </Grid> 
           </ParallaxLayer>
-          <ParallaxLayer offset={3} speed={0.25}>
+            */}
+          <ParallaxLayer offset={2} speed={0.25}>
             <Grid id="contact-us">
               <ContactUs />
             </Grid>
@@ -70,13 +89,16 @@ const styles: any = {
   bgColor: (theme: any) => ({
     backgroundColor: theme.palette.background.default,
   }),
-  // backgroundMain: {
-  //   backgroundImage: `url(${background.src})`,
-  //   backgroundSize: "auto 950px",
-  //   backgroundRepeat: "repeat-x",
-  //   width: "100%",
-  //   height: "100vh",
-  // },
+  content: {
+    background: "rgb(136,136,136,0.5)",
+    width: "40%",
+    height: "auto",
+    position: "relative",
+    borderRadius: "20px",
+    padding: "10px",
+    top: "15%",
+    left: "2%",
+  },
   foreground: {
     backgroundImage: `url(${foreground.src})`,
     backgroundSize: "auto 950px",

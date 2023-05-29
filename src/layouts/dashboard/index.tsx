@@ -4,6 +4,8 @@ import { Box, Grid, useTheme } from "@mui/material";
 import Topnavbar from "./top-navbar/TopNavbar";
 import Footer from "./footer/Footer";
 import image from "../../assets/bg.png";
+import Drawer from "./drawer";
+import AppDrawer from "./drawer";
 // ----------------------------------------------------------------------
 
 export default function DashboardLayout({ children }: any) {
@@ -19,11 +21,13 @@ export default function DashboardLayout({ children }: any) {
           background: "white",
         }}
       >
-        <Topnavbar />
+        <Grid sx={{ display: { xs: "none", md: "block" } }}>
+          <Topnavbar />
+        </Grid>
+        <Grid sx={{ display: { md: "none", xs: "flex" } }}>
+          <AppDrawer />
+        </Grid>
         <Box sx={{ width: "100%" }}>
-          <Grid sx={{ display: { xs: "none", md: "block" } }}>
-            {/* <Grid sx={{ display: { md: "none", xs: "block" } }}>abcdefg</Grid> */}
-          </Grid>
           <Box sx={styles.childrenStyles(theme)}>{children}</Box>
         </Box>
       </Box>

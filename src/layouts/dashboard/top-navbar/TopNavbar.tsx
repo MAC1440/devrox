@@ -29,7 +29,7 @@ const Topnavbar = () => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
-                flexWrap: "wrap",
+                // flexWrap: "wrap",
                 background: createGradient(
                   theme.palette.primary.darker,
                   theme.palette.primary.lighter
