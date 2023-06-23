@@ -1,6 +1,6 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { Box, Paper, Button, Typography, Grid } from "@mui/material";
-import { images } from "../../data/products-data";
+import { images, productsData } from "../../data/products-data";
 import { useTheme } from "@emotion/react";
 
 //--------------------------------------------------------------
@@ -8,11 +8,14 @@ import MobileStepper from "@mui/material/MobileStepper";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import { useRouter } from "next/router";
+import Image from "next/image";
+import { red } from "@mui/material/colors";
 
 function Games() {
   const router = useRouter();
   const theme: any = useTheme();
-  const [activeStep, setActiveStep] = React.useState(0);
+  const [activeStep, setActiveStep] = useState(0);
+  const [selectedGame, setSelectedGame] = useState<any>(productsData[0].name);
   const maxSteps = images.length;
 
   const handleNext = () => {
@@ -28,101 +31,91 @@ function Games() {
   };
 
   return (
-    <Grid
-      container
-      justifyContent={"space-around"}
-      minHeight="80vh"
-      sx={{
-        flexDirection: { xs: "column", md: "row" },
-        gap: { xs: "10em", md: "0em" },
-        alignItems: { md: "center", xs: "space-between" },
-      }}
-    >
-      <Grid>
+    <Grid container p={3} justifyContent={"center"} minHeight="80vh">
+      <Grid
+        bgcolor={"rgb(53,169,236,0.5)"}
+        boxShadow={"-5px -5px #4B0F2D"}
+        p={1}
+        borderRadius={3}
+        mb={2}
+        height="100%"
+      >
         <h1
           style={{
-            textAlign: "center",
-            transform: "rotate(-45deg)",
-            color: theme.palette.primary.main,
+            color: "white",
+            textShadow:
+              "-2px 0 rgb(53,169,236), 0 2px rgb(53,169,236), 2px 0 rgb(53,169,236), 0 -2px rgb(53,169,236)",
           }}
         >
-          Games To Look for
+          Our Pride and Joy
         </h1>
+        <p style={{ textAlign: "center" }}>Behold the Games</p>
       </Grid>
-      <Grid>
-        <Box
-          className="subBox"
-          sx={{
-            maxWidth: 900,
-            flexGrow: 1,
-            margin: "auto",
-          }}
+      <Grid container justifyContent={"center"}>
+        <Grid
+          item
+          display={"flex"}
+          justifyContent={"space-around"}
+          width={"100%"}
         >
-          <Paper
-            square
-            elevation={0}
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              height: 50,
-              pl: 2,
-              bgcolor: "background.dark",
-            }}
+          {productsData.map((item: any) => (
+            <Grid
+              display={"flex"}
+              flexDirection={"column"}
+              justifyContent={"center"}
+              alignItems={"center"}
+              height="120px"
+              width="170px"
+              borderRadius="100%"
+            >
+              <div style={{ fontWeight: "600", color: "#4B0F2D" }}>
+                {selectedGame.id === item.id
+                  ? selectedGame?.name
+                  : "\u00a0\u00a0"}
+              </div>
+              <Image
+                onClick={() => {
+                  setSelectedGame(item);
+                }}
+                src={item.images[0]}
+                alt="Main"
+                height={75}
+                width={75}
+                style={{
+                  borderRadius: "50%",
+                  border: `2px solid ${
+                    selectedGame.id === item.id ? "#4B0F2D" : "rgb(53,169,236)"
+                  }`,
+                  boxShadow: `-3px -3px 3px ${
+                    selectedGame.id === item.id ? "#4B0F2D" : "rgb(53,169,236)"
+                  }`,
+                  cursor: "pointer",
+                }}
+              />
+            </Grid>
+          ))}
+        </Grid>
+        <Grid container spacing={4} p={2} mt={2}>
+          <Grid
+            item
+            md={6}
+            bgcolor={"rgb(53,169,236,0.5)"}
+            boxShadow={"-5px -5px #4B0F2D"}
+            borderRadius={3}
           >
-            <Typography textAlign="center">
-              {images[activeStep].label}
-            </Typography>
-          </Paper>
-
-          <Box
-            component="img"
-            sx={{
-              cursor: "pointer",
-              height: 500,
-              display: "block",
-              maxWidth: 900,
-              margin: "auto",
-              overflow: "hidden",
-              width: "100%",
-              boxSizing: "border-box",
-              // "&:hover": {
-              //   width: "99%",
-              //   height: "99%",
-              //   border: "2px solid gray",
-              // },
-            }}
-            src={images[activeStep].imgPath}
-            alt={images[activeStep].label}
-            onClick={() => router.push(`/games/${images[activeStep].path}`)}
-          />
-          <MobileStepper
-            steps={maxSteps}
-            position="static"
-            activeStep={activeStep}
-            sx={{ background: theme.palette.background.dark }}
-            nextButton={
-              <Button
-                size="small"
-                onClick={handleNext}
-                disabled={activeStep === maxSteps - 1}
-              >
-                Next
-                <KeyboardArrowRight />
-              </Button>
-            }
-            backButton={
-              <Button
-                size="small"
-                onClick={handleBack}
-                disabled={activeStep === 0}
-              >
-                <KeyboardArrowLeft />
-                Back
-              </Button>
-            }
-          />
-        </Box>
+            <h1 style={{ textAlign: "center" }}>{selectedGame?.name}</h1>
+            <p>{selectedGame?.description}</p>
+          </Grid>
+          <Grid item md={6} container justifyContent={"center"}>
+            <Image
+              src={selectedGame?.images[1]}
+              alt=""
+              width={450}
+              height={300}
+              style={{ borderRadius: "20px" }}
+            />
+          </Grid>
+        </Grid>
       </Grid>
     </Grid>
   );

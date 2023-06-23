@@ -41,12 +41,17 @@ export default function Dashboard() {
           <ParallaxLayer offset={0} speed={0.1} factor={2}></ParallaxLayer>
           <ParallaxLayer offset={0} speed={0.7}>
             <Grid sx={styles.foreground} id="home">
-              <Grid sx={styles.content} textAlign={"center"}>
+              <Grid
+                sx={styles.content}
+                textAlign={"center"}
+                boxShadow={"-10px -10px #4B0F2D"}
+                lineHeight={"40px"}
+              >
                 <h1
                   style={{
-                    color: "brown",
+                    color: "white",
                     textShadow:
-                      "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black",
+                      "-2px 0 rgb(53,169,236), 0 2px rgb(53,169,236), 2px 0 rgb(53,169,236), 0 -2px rgb(53,169,236)",
                   }}
                 >
                   Welcome to Gamers Spa
@@ -90,7 +95,7 @@ const styles: any = {
     backgroundColor: theme.palette.background.default,
   }),
   content: {
-    background: "rgb(136,136,136,0.5)",
+    background: "rgb(53,169,236,0.5)",
     width: "40%",
     height: "auto",
     position: "relative",
