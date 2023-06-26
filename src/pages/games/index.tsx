@@ -15,7 +15,7 @@ function Games() {
   const router = useRouter();
   const theme: any = useTheme();
   const [activeStep, setActiveStep] = useState(0);
-  const [selectedGame, setSelectedGame] = useState<any>(productsData[0].name);
+  const [selectedGame, setSelectedGame] = useState<any>(productsData[0]);
   const maxSteps = images.length;
 
   const handleNext = () => {
@@ -109,7 +109,7 @@ function Games() {
           </Grid>
           <Grid item md={6} container justifyContent={"center"}>
             <Image
-              src={selectedGame?.images[1]}
+              src={selectedGame?.images?.[1]}
               alt=""
               width={450}
               height={300}
