@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import { productsData } from "../../data/products-data";
 import { Grid, useTheme } from "@mui/material";
+import Image from "next/image";
 
 export default function SingleProduct() {
   const theme = useTheme();
@@ -15,7 +16,7 @@ export default function SingleProduct() {
       <Grid container justifyContent={"center"} gap={2}>
         {game?.images?.map((img: any, i) => (
           <Grid item key={i} md={4}>
-            <img
+            <Image
               src={`${img.src}`}
               alt="game img"
               height={250}

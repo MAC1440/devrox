@@ -67,6 +67,7 @@ function Games() {
               height="120px"
               width="170px"
               borderRadius="100%"
+              key={item.id}
             >
               <div style={{ fontWeight: "600", color: "#4B0F2D" }}>
                 {selectedGame.id === item.id
